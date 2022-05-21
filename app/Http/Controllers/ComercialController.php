@@ -93,7 +93,7 @@ class ComercialController extends Controller
 
             $consultoresquery[$usuario->no_usuario] = Factura::select(
                 DB::raw(
-                    'SQL_NO_CACHE date_format(caol.cao_fatura.data_emissao, "%m") as mes, year(cao_fatura.data_emissao) as anno,  
+                    'SQL_NO_CACHE date_format(cao_fatura.data_emissao, "%m") as mes, year(cao_fatura.data_emissao) as anno,  
                     sum(cao_fatura.valor - (cao_fatura.valor * cao_fatura.total_imp_inc / 100)) as receita'
                 )
             )
